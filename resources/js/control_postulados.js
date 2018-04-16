@@ -169,10 +169,10 @@ $(document).ready(function()
 	        .done(function(respuesta)
 	        {
 	        	var resultado = $.parseJSON(respuesta);
-	        	if(resultado)
+	        	if(resultado != "")
 	        	{
 	        		//window.open('../../uploads/' + resultado.hv_formato_filename, '_blank');
-			        msg=open('../../uploads/' + resultado.hv_formato_filename,"NewWindow","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no");	
+			        msg=open('../../uploads/' + resultado,"NewWindow","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no");	
 	        	}
 	        	else
 	        	{

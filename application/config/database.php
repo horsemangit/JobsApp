@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-    'dsn' => 'pgsql:host=localhost;port=5432;dbname=db_computrabajo',
+    'dsn' => 'pgsql:host=localhost;port=5432;dbname=db_empleapp',
     'hostname' => 'localhost',
-    'username' => 'empleoapp',
+    'username' => 'userjobs',
     'password' => '3mpl304pp',
-    'database' => 'db_computrabajo',
+    'database' => 'db_empleapp',
     'dbdriver' => 'pdo',
     'port' => '5432',
     'dbprefix' => '',

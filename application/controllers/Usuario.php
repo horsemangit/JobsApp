@@ -331,7 +331,7 @@
       {
         $id_hoja_de_vida = $this->input->post('usu_id');
         $response = $this->Usuario_model->upload_select_hv($id_hoja_de_vida);
-        echo json_encode($response);            
+        echo json_encode($response->hv_formato_filename);            
       }
       else
       {
@@ -354,11 +354,20 @@
         {
           $datos = $response[0]->hv_formato_filename;
           $root = 'uploads/';
-          $file = basename($datos);
+          $namefile = basename($datos);
           $path = $root.$file;
           $type = '';
+
+          $ruote = dirname(APP_PATH).$path;
+          $filename = $namefile;
+          header("Content-type: application/octet-stream");
+          header("Content-Type: application/force-download");
+          header("Content-Disposition: attachment; filename=\"$filename\"\n");
+          readfile($file);
+        }
+
            
-          if (is_file($path))
+          /*if (is_file($path))
           {
             $size = filesize($path);
               if (function_exists('mime_content_type'))
@@ -378,9 +387,9 @@
               }
 
              // Definir headers
-             header('Content-Type: $type');
-             header('Content-Disposition: attachment; filename=$file');
-             header('Content-Transfer-Encoding: binary');
+             header('Content-type: $type');
+             header('Content-disposition: attachment; filename=$file');
+             header('Content-transfer-encoding: binary');
              header('Content-Length: ' . $size);
              // Descargar archivo
              readfile($path);
@@ -388,15 +397,14 @@
           else
           {
            die('El archivo no existe.');
-          } 
-        }
-        
+          } */    
       }
       else
       {
-        redirect(site_url());
+        redirect(site_url());      
       }
     }
+
 
     /* Delete File Upload */
     public function delete_upload()

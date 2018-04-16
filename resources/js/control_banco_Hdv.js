@@ -121,14 +121,16 @@ $(document).ready(function()
         .done(function(respuesta)
         {
         	var resultado = $.parseJSON(respuesta);
-        	if(resultado)
+        	if(resultado != "")
         	{
-        		window.open('../../uploads/' + resultado.hv_formato_filename,"_blank","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no");	
+        		window.open('../../uploads/' + resultado,"_blank","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no");	
         	}
         	else
         	{
         		swal("Que lastima!","Este usuario no tiene una hoja de vida para mostrar.","info");
-        	}       	
+        	} 
+
+        	
         })
         .fail(function() {
         	console.log("error");
