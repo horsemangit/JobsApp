@@ -1,0 +1,22 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #2C3E50;
+}
+
+#color li a{
+	background: #2C3E50;
+	color: #fff;
+}
+
+	
+
+
+
